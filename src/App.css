@@ -1,0 +1,37 @@
+:root {
+  --ff-primary: "Comfortaa", cursive;
+  --ff-secundary: "Open Sans", sans-serif;
+  --black: #150605;
+  --purple: #863ef7;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Comfortaa", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.linkStyle {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.navBar {
+  background-color: var(--purple);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.linkStyle {
+  color: var(--white);
+}
