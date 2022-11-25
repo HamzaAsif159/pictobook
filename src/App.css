@@ -4,6 +4,7 @@
   --black: #150605;
   --purple: #863ef7;
   --white: #ffffff;
+  --red: #ff0000;
 }
 
 * {
@@ -48,15 +49,15 @@ img {
   margin: 0 auto 3rem;
 }
 
-img.imageGrid {
+.imageContainer {
+  position: relative;
+}
+
+.imageGrid {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top;
-}
-
-.imageContainer {
-  position: relative;
 }
 
 .wide {
@@ -70,4 +71,26 @@ img.imageGrid {
 .big {
   grid-column: span 2;
   grid-row: span 2;
+}
+
+.favorite,
+.cart {
+  font-size: 2rem;
+  position: absolute;
+  cursor: pointer;
+}
+.favorite {
+  color: var(--white);
+  top: 5px;
+  left: 5px;
+}
+
+.ri-heart-fill {
+  opacity: 0.7;
+}
+
+.cart {
+  color: var(--white);
+  top: 5px;
+  right: 5px;
 }
