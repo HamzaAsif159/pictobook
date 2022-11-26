@@ -1,3 +1,4 @@
+import { func } from "prop-types"
 import React from "react"
 import { useState, useEffect } from "react"
 
@@ -37,6 +38,10 @@ function ContextProvider({ children }) {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id))
   }
 
+  function emptyCart() {
+    setCartItems([])
+  }
+
   return (
     <Context.Provider
       value={{
@@ -45,6 +50,7 @@ function ContextProvider({ children }) {
         addToCart,
         cartItems,
         removeFromCart,
+        emptyCart,
       }}
     >
       {children}
