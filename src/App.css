@@ -107,3 +107,32 @@ img {
   margin-top: 10px;
   margin-bottom: 30px;
 }
+
+.totalCost {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.deleteBin {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.orderBtn {
+  display: inline-block;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: var(--purple);
+  outline: none;
+  border: none;
+  color: var(--white);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.totalCost,
+.orderBtn {
+  margin: 5px 0;
+  text-align: left;
+  margin-left: 40px;
+}
