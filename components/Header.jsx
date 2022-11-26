@@ -1,7 +1,12 @@
-import React from "react"
+import { React, useContext } from "react"
 import { Link } from "react-router-dom"
+import { Context } from "../Context"
 
 export default function Header() {
+  const { cartItems } = useContext(Context)
+  const cartClassName =
+    cartItems.length > 0 ? "ri-shopping-cart-fill" : "ri-shopping-cart-line"
+
   return (
     <nav className="navBar">
       <h1>
@@ -10,7 +15,7 @@ export default function Header() {
         </Link>
       </h1>
       <Link to="/cart" className="linkStyle">
-        <i className="ri-shopping-cart-line ri-fw ri-2x "></i>
+        <i className={` ${cartClassName} ri-fw ri-2x`}></i>
       </Link>
     </nav>
   )

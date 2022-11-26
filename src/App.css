@@ -94,3 +94,16 @@ img {
   top: 5px;
   right: 5px;
 }
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 30px 0;
+}
+
+.cartTitle {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
