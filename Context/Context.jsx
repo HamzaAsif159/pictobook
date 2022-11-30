@@ -1,7 +1,5 @@
-import { func } from 'prop-types'
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { json } from 'react-router-dom'
 
 const Context = React.createContext()
 
@@ -69,8 +67,7 @@ function ContextProvider({ children }) {
         cartItems,
         removeFromCart,
         emptyCart
-      }}
-    >
+      }}>
       {children}
     </Context.Provider>
   )

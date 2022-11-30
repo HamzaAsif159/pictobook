@@ -1,5 +1,5 @@
 import { React, useState, useContext } from 'react'
-import { Context } from '../Context'
+import { Context } from '../../Context/Context'
 import PropTypes from 'prop-types'
 
 export default function Image({ className, img }) {
@@ -27,8 +27,7 @@ export default function Image({ className, img }) {
     <div
       className={`${className} imageContainer`}
       onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
+      onMouseLeave={() => setHover(false)}>
       <img src={img.url} className="imageGrid" />
       {heartIcon()}
       {cartIcon()}

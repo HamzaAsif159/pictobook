@@ -1,6 +1,6 @@
 import { React, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { Context } from '../Context'
+import { Context } from '../../Context/Context'
 
 export default function Header() {
   const { cartItems } = useContext(Context)
@@ -15,6 +15,7 @@ export default function Header() {
       </h1>
       <Link to="/cart" className="linkStyle">
         <i className={` ${cartClassName} ri-fw ri-2x`}></i>
+        <span className="cartNumbering">{cartItems.length}</span>
       </Link>
     </nav>
   )

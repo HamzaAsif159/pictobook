@@ -1,6 +1,6 @@
 import { React, useContext } from 'react'
-import { Context } from '../Context'
-import { getClass } from '../utils/getClass'
+import { Context } from '../../Context/Context'
+import { getClass } from '../../utils/getClass'
 import Image from '../components/Image'
 
 export default function Photos() {
