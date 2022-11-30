@@ -15,16 +15,20 @@ function ContextProvider({ children }) {
       .then((data) => localStorage.setItem("allPhotos", JSON.stringify(data)))
   }, [])
 
-  const [allPhotos, SetAllPhotos] = useState(
-    JSON.parse(localStorage.getItem("allPhotos"))
-  )
+  const [allPhotos, SetAllPhotos] = useState(() => {
+    const localItems = localStorage.getItem("allPhotos")
+    const parsedItems = JSON.parse(localItems)
+    return parsedItems || []
+  })
 
-  const [cartItems, setCartItems] = useState(
-    JSON.parse(localStorage.getItem("cartItems"))
-  )
+  const [cartItems, setCartItems] = useState(() => {
+    const localItems = localStorage.getItem("cartItems")
+    const parsedItems = JSON.parse(localItems)
+    return parsedItems || []
+  })
 
   function toggleFavorite(id) {
-    const updatedPhotos = Object.keys(allPhotos).map((photo) => {
+    const updatedPhotos = allPhotos.map((photo) => {
       if (photo.id === id) {
         return {
           ...photo,
