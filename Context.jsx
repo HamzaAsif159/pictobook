@@ -6,15 +6,6 @@ import { json } from "react-router-dom"
 const Context = React.createContext()
 
 function ContextProvider({ children }) {
-  const url =
-    "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
-
-  useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => localStorage.setItem("allPhotos", JSON.stringify(data)))
-  }, [])
-
   const [allPhotos, SetAllPhotos] = useState(() => {
     const localItems = localStorage.getItem("allPhotos")
     const parsedItems = JSON.parse(localItems)
@@ -26,6 +17,15 @@ function ContextProvider({ children }) {
     const parsedItems = JSON.parse(localItems)
     return parsedItems || []
   })
+
+  const url =
+    "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
+
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => localStorage.setItem("allPhotos", JSON.stringify(data)))
+  }, [])
 
   function toggleFavorite(id) {
     const updatedPhotos = allPhotos.map((photo) => {
