@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 const Context = React.createContext()
 
 function ContextProvider({ children }) {
+  const [isFetching, setIsFetching] = useState(false)
+
   const [allPhotos, SetAllPhotos] = useState(() => {
     const localItems = localStorage.getItem('allPhotos')
     const parsedItems = JSON.parse(localItems)
@@ -20,9 +22,11 @@ function ContextProvider({ children }) {
     'https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json'
 
   useEffect(() => {
+    setIsFetching(true)
     fetch(url)
       .then((res) => res.json())
       .then((data) => localStorage.setItem('allPhotos', JSON.stringify(data)))
+    setIsFetching(false)
   }, [])
 
   function toggleFavorite(id) {
@@ -66,7 +70,8 @@ function ContextProvider({ children }) {
         addToCart,
         cartItems,
         removeFromCart,
-        emptyCart
+        emptyCart,
+        isFetching
       }}>
       {children}
     </Context.Provider>
