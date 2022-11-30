@@ -1,12 +1,18 @@
 import { func } from "prop-types"
 import React from "react"
 import { useState, useEffect } from "react"
+import { json } from "react-router-dom"
 
 const Context = React.createContext()
 
 function ContextProvider({ children }) {
-  const [allPhotos, SetAllPhotos] = useState([])
-  const [cartItems, setCartItems] = useState([])
+  const [allPhotos, SetAllPhotos] = useState(
+    JSON.parse(localStorage.getItem("allPhotos"))
+  )
+
+  const [cartItems, setCartItems] = useState(
+    JSON.parse(localStorage.getItem("cartItems"))
+  )
 
   const url =
     "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
@@ -14,7 +20,9 @@ function ContextProvider({ children }) {
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
-      .then((data) => SetAllPhotos(data))
+      .then((data) =>
+        window.localStorage.setItem("allPhotos", JSON.stringify(data))
+      )
   }, [])
 
   function toggleFavorite(id) {
@@ -42,6 +50,13 @@ function ContextProvider({ children }) {
     setCartItems([])
   }
 
+  useEffect(() => {
+    localStorage.setItem("allPhotos", JSON.stringify(allPhotos))
+  }, [allPhotos])
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems))
+  }, [cartItems])
   return (
     <Context.Provider
       value={{
