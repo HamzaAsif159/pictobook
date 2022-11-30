@@ -1,24 +1,23 @@
-import { React, useContext, useState } from "react"
-import { Context } from "../Context"
-import CartItem from "../components/CartItem"
-import { func } from "prop-types"
+import { React, useContext, useState } from 'react'
+import { Context } from '../Context'
+import CartItem from '../components/CartItem'
 
 export default function Cart() {
-  const [buttonText, setButtonText] = useState("Place order")
+  const [buttonText, setButtonText] = useState('Place order')
   const { cartItems, emptyCart } = useContext(Context)
   const totalCost = 5.99 * cartItems.length
-  const totalDisplayCost = totalCost.toLocaleString("en-US", {
-    style: "currency",
-    currency: "USD",
+  const totalDisplayCost = totalCost.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD'
   })
   const cartItemElements = cartItems.map((item) => {
     return <CartItem key={item.id} item={item} />
   })
 
   function placeOrder() {
-    setButtonText("Ordering...")
+    setButtonText('Ordering...')
     setTimeout(() => {
-      setButtonText("Place order")
+      setButtonText('Place order')
       emptyCart()
     }, 3000)
   }

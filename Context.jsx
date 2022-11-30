@@ -1,30 +1,30 @@
-import { func } from "prop-types"
-import React from "react"
-import { useState, useEffect } from "react"
-import { json } from "react-router-dom"
+import { func } from 'prop-types'
+import React from 'react'
+import { useState, useEffect } from 'react'
+import { json } from 'react-router-dom'
 
 const Context = React.createContext()
 
 function ContextProvider({ children }) {
   const [allPhotos, SetAllPhotos] = useState(() => {
-    const localItems = localStorage.getItem("allPhotos")
+    const localItems = localStorage.getItem('allPhotos')
     const parsedItems = JSON.parse(localItems)
     return parsedItems || []
   })
 
   const [cartItems, setCartItems] = useState(() => {
-    const localItems = localStorage.getItem("cartItems")
+    const localItems = localStorage.getItem('cartItems')
     const parsedItems = JSON.parse(localItems)
     return parsedItems || []
   })
 
   const url =
-    "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
+    'https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json'
 
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
-      .then((data) => localStorage.setItem("allPhotos", JSON.stringify(data)))
+      .then((data) => localStorage.setItem('allPhotos', JSON.stringify(data)))
   }, [])
 
   function toggleFavorite(id) {
@@ -32,7 +32,7 @@ function ContextProvider({ children }) {
       if (photo.id === id) {
         return {
           ...photo,
-          isFavorite: !photo.isFavorite,
+          isFavorite: !photo.isFavorite
         }
       }
       return photo
@@ -53,11 +53,11 @@ function ContextProvider({ children }) {
   }
 
   useEffect(() => {
-    localStorage.setItem("allPhotos", JSON.stringify(allPhotos))
+    localStorage.setItem('allPhotos', JSON.stringify(allPhotos))
   }, [allPhotos])
 
   useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems))
+    localStorage.setItem('cartItems', JSON.stringify(cartItems))
   }, [cartItems])
 
   return (
@@ -68,7 +68,7 @@ function ContextProvider({ children }) {
         addToCart,
         cartItems,
         removeFromCart,
-        emptyCart,
+        emptyCart
       }}
     >
       {children}

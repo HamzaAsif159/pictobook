@@ -1,6 +1,6 @@
 :root {
-  --ff-primary: "Comfortaa", cursive;
-  --ff-secundary: "Open Sans", sans-serif;
+  --ff-primary: 'Comfortaa', cursive;
+  --ff-secundary: 'Open Sans', sans-serif;
   --black: #150605;
   --purple: #863ef7;
   --white: #ffffff;
@@ -15,7 +15,7 @@
 
 html,
 body {
-  font-family: "Comfortaa", sans-serif;
+  font-family: 'Comfortaa', sans-serif;
 }
 
 img {
