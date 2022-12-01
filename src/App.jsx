@@ -1,8 +1,8 @@
-import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import { ThreeDots } from 'react-loader-spinner'
 import React from 'react'
 // Internal imports below
+import './App.css'
 import Header from './components/Header'
 import Photos from './Views/Photos'
 import Cart from './Views/Cart'

@@ -15,7 +15,7 @@ export default function Header() {
       </h1>
       <Link to="/cart" className="linkStyle">
         <i className={` ${cartClassName} ri-fw ri-2x`}></i>
-        <span className="cartNumbering">{cartItems.length}</span>
+        <span className="cartNumbering">{cartItems.length > 0 ? cartItems.length : ''}</span>
       </Link>
     </nav>
   )

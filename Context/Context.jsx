@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const Context = React.createContext()
 
@@ -23,9 +24,7 @@ function ContextProvider({ children }) {
 
   useEffect(() => {
     setIsFetching(true)
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => localStorage.setItem('allPhotos', JSON.stringify(data)))
+    axios.get(url).then((res) => localStorage.setItem('allPhotos', JSON.stringify(res.data)))
     setIsFetching(false)
   }, [])
 
@@ -44,10 +43,12 @@ function ContextProvider({ children }) {
 
   function addToCart(newItem) {
     setCartItems((prevItems) => [...prevItems, newItem])
+    SetAllPhotos((prevItems) => prevItems.filter((item) => item !== newItem))
   }
 
-  function removeFromCart(id) {
-    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id))
+  function removeFromCart(item) {
+    SetAllPhotos((prevItem) => [item, ...prevItem])
+    setCartItems((prevItems) => prevItems.filter((prevItem) => prevItem !== item))
   }
 
   function emptyCart() {
