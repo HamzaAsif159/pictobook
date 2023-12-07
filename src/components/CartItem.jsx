@@ -1,7 +1,7 @@
 import { React, useContext } from 'react'
 import { Context } from '../../Context/Context'
 
-function CartItem({ item }) {
+export default function CartItem({ item }) {
   const { removeFromCart } = useContext(Context)
   return (
     <div className="cart-item">
@@ -13,5 +13,3 @@ function CartItem({ item }) {
     </div>
   )
 }
-
-export default CartItem

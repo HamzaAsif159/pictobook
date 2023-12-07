@@ -39,6 +39,36 @@ img {
   color: var(--white);
 }
 
+.home {
+  background-color: var(--purple);
+  color: var(--white);
+  height: 100vh;
+  width: 100vw;
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+}
+
+.homeContainer > h1 {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+}
+
+.moveNextIcon {
+  display: inline-block;
+  font-size: 40px;
+  margin-top: 70px;
+  color: var(--white);
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .photos {
   padding: 20px;
   display: grid;

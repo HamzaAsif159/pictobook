@@ -1,6 +1,7 @@
 import { React, useContext, useState } from 'react'
 import { Context } from '../../Context/Context'
 import CartItem from '../components/CartItem'
+import Header from '../components/Header'
 
 export default function Cart() {
   const [buttonText, setButtonText] = useState('Place order')
@@ -24,6 +25,7 @@ export default function Cart() {
 
   return (
     <div>
+      <Header />
       <h1 className="cartTitle">Check out</h1>
       {cartItemElements}
       <p className="totalCost">Total Cost: {totalDisplayCost}</p>

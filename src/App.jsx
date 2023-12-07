@@ -6,6 +6,7 @@ import './App.css'
 import Header from './components/Header'
 import Photos from './Views/Photos'
 import Cart from './Views/Cart'
+import Home from './Views/Home'
 import { Context } from '../Context/Context'
 
 function App() {
@@ -27,9 +28,9 @@ function App() {
         </div>
       ) : (
         <>
-          <Header />
           <Routes>
-            <Route exact path="/" element={<Photos />} />
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/photos" element={<Photos />} />
             <Route exact path="/cart" element={<Cart />} />
           </Routes>
         </>
