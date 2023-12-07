@@ -19,7 +19,7 @@ export default function Photos() {
     <>
       <Header />
       {isFetching ? (
-        <div className="loadingSpinner">
+        <div className="spinner">
           <ThreeDots
             height="80"
             width="100"
