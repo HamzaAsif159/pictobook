@@ -7,18 +7,18 @@ import Image from '../components/Image'
 import Header from '../components/Header'
 
 export default function Photos() {
-  const { allPhotos, isFetching } = useContext(Context)
+  const { allPhotos } = useContext(Context)
 
   const photos = allPhotos?.map((img, i) => (
     <Image key={img.id} img={img} className={getClass(i)} />
   ))
 
-  console.log(isFetching)
-
   return (
     <>
       <Header />
-      {isFetching ? (
+      {photos ? (
+        <div className="photos">{photos}</div>
+      ) : (
         <div className="spinner">
           <ThreeDots
             height="80"
@@ -31,8 +31,6 @@ export default function Photos() {
             visible={true}
           />
         </div>
-      ) : (
-        <div className="photos">{photos}</div>
       )}
     </>
   )
