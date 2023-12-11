@@ -13,10 +13,15 @@ export default function Header() {
           Pictobook
         </Link>
       </h1>
-      <Link to="/cart" className="linkStyle">
-        <i className={` ${cartClassName} ri-fw ri-2x`}></i>
-        <span className="cartNumbering">{cartItems.length > 0 ? cartItems.length : ''}</span>
-      </Link>
+      <div>
+        <a href="https://wa.me/923249962290" className="clickToChat">
+          <i class="ri-whatsapp-fill ri-2x"></i>
+        </a>
+        <Link to="/cart" className="linkStyle">
+          <i className={` ${cartClassName} ri-fw ri-2x`}></i>
+          <span className="cartNumbering">{cartItems.length > 0 ? cartItems.length : ''}</span>
+        </Link>
+      </div>
     </nav>
   )
 }

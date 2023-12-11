@@ -27,7 +27,7 @@ export default function Cart() {
     <div>
       <Header />
       <h1 className="cartTitle">Check out</h1>
-      {cartItemElements}
+      <div>{cartItemElements}</div>
       <p className="totalCost">Total Cost: {totalDisplayCost}</p>
       {cartItems.length > 0 ? (
         <button className="orderBtn" onClick={placeOrder}>

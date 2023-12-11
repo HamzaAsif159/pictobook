@@ -4,7 +4,7 @@ import { Context } from '../../Context/Context'
 export default function CartItem({ item }) {
   const { removeFromCart } = useContext(Context)
   return (
-    <div className="cart-item">
+    <div className="cartItem">
       <img src={item.url} width="150px" />
       <div>
         <i className="ri-delete-bin-line deleteBin" onClick={() => removeFromCart(item)}></i>
