@@ -35,6 +35,20 @@ img {
   align-items: center;
 }
 
+.homeNavbar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.homeNavbar > * {
+  cursor: pointer;
+  color: white !important;
+  text-decoration: none;
+}
+
 .linkStyle {
   color: var(--white);
 }

@@ -22,6 +22,12 @@ export default function Home() {
 
   return (
     <div className="home">
+      <div className="homeNavbar">
+        <div>Home</div>
+        <a href="https://wa.me/923249962290" target="_blank">
+          Contact
+        </a>
+      </div>
       <div className="homeContainer">
         <h1>Pictobook</h1>
         <div>

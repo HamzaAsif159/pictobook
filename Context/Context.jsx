@@ -14,9 +14,9 @@ function ContextProvider({ children }) {
   })
 
   const [cartItems, setCartItems] = useState(() => {
-    const localItems = localStorage.getItem('cartItems')
-    const parsedItems = JSON.parse(localItems)
-    return parsedItems || []
+    const localItems = JSON.parse(localStorage.getItem('cartItems'))
+
+    return localItems || []
   })
 
   const url =

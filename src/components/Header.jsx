@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <nav className="navBar">
       <h1>
-        <Link to="/" className="linkStyle">
+        <Link to="/photos" className="linkStyle">
           Pictobook
         </Link>
       </h1>
